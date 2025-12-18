@@ -6,22 +6,64 @@ export default function Home() {
   const [audience, setAudience] = useState("Beginner");
   const [explanation, setExplanation] = useState("");
 
+  const beginnerExplanations = [
+    "Soundness Layer helps make sure complex cryptographic proofs used in Web3 applications are correct, without relying on a single trusted party.\n\nMany blockchain apps depend on advanced math to stay secure and scalable, but verifying those proofs can be slow or centralized. Soundness solves this by decentralizing verification.\n\nFor users, this means better security, more transparency, and apps that don’t rely on hidden trust assumptions.",
+
+    "At its core, Soundness Layer exists to verify proofs in a decentralized way.\n\nInstead of trusting one server or company to say a proof is valid, Soundness spreads verification across multiple participants. This reduces risk and improves trust.\n\nThis matters because it helps Web3 apps scale safely while staying true to decentralization.",
+
+    "Soundness Layer is infrastructure that helps Web3 applications prove they are behaving correctly.\n\nAs blockchains grow more complex, verifying computations becomes harder. Soundness makes verification efficient, decentralized, and transparent.\n\nFor everyday users, this means safer apps and stronger guarantees that systems work as promised.",
+
+    "In Web3, trust is built on mathematics. Soundness Layer helps verify those mathematical proofs in a decentralized way.\n\nBy removing reliance on centralized verifiers, Soundness strengthens security and transparency.\n\nThis allows applications to scale while remaining trustless and verifiable by anyone.",
+
+    "Soundness Layer is designed to make advanced cryptography usable in real-world Web3 applications.\n\nIt decentralizes the verification of proofs, ensuring no single party controls validation.\n\nThis leads to safer, more scalable applications and a stronger foundation for the Web3 ecosystem."
+  ];
+
+  const developerExplanations = [
+    "Soundness Layer provides a decentralized verification and attestation layer for zero-knowledge proofs.\n\nOn-chain verification is costly, while off-chain verification introduces trust assumptions. Soundness bridges this gap using optimized verification pipelines.\n\nThis allows developers to build scalable, secure applications without reinventing verification infrastructure.",
+
+    "For developers working with ZK proofs, verification is a major bottleneck.\n\nSoundness Layer enables trust-minimized verification using decentralized infrastructure, reducing costs and complexity.\n\nDevelopers can focus on product logic while relying on Soundness for strong cryptographic guarantees.",
+
+    "Soundness Layer abstracts proof verification into shared infrastructure.\n\nBy leveraging decentralized verification and off-chain storage, it improves scalability and security.\n\nThis enables cross-chain applications and complex ZK systems without centralized trust.",
+
+    "Developers can use Soundness Layer to verify cryptographic proofs efficiently and securely.\n\nIt removes the need for custom verification logic while preserving decentralization.\n\nThis results in lower costs, better scalability, and simpler integrations.",
+
+    "Soundness Layer is built for developers who need scalable, trust-minimized proof verification.\n\nIt enables efficient verification workflows while maintaining decentralization.\n\nThis helps developers ship secure ZK-powered applications faster."
+  ];
+
+  const investorExplanations = [
+    "Soundness Layer is foundational infrastructure for zero-knowledge applications.\n\nAs ZK adoption grows, verification becomes a critical bottleneck. Soundness directly addresses this problem.\n\nInfrastructure layers like this tend to capture long-term value as the ecosystem expands.",
+
+    "Verification is one of the biggest cost centers in ZK systems.\n\nSoundness Layer reduces verification cost and latency while preserving decentralization.\n\nThis positions it as a core infrastructure layer with strong network effects.",
+
+    "Soundness Layer focuses on solving a fundamental Web3 problem: scalable, trust-minimized verification.\n\nAs more applications rely on ZK proofs, demand for verification infrastructure increases.\n\nThis creates long-term value potential for Soundness as adoption grows.",
+
+    "Soundness Layer enables efficient verification for complex cryptographic systems.\n\nBy lowering costs and trust assumptions, it unlocks scalable ZK adoption.\n\nInfrastructure projects like Soundness benefit from ecosystem-wide usage and compounding demand.",
+
+    "Soundness Layer sits at the intersection of scalability, security, and decentralization.\n\nBy addressing verification bottlenecks, it enables broader ZK adoption.\n\nThis makes it a strong infrastructure play with long-term upside."
+  ];
+
   const generateExplanation = () => {
     if (audience === "Beginner") {
       setExplanation(
-        "Soundness Layer is a decentralized system that helps verify complex cryptographic proofs in a secure and transparent way.\n\nIn Web3, many applications rely on advanced mathematics, especially zero-knowledge proofs, to stay secure and scalable. The problem is that verifying these proofs can be expensive, slow, or centralized. Soundness exists to fix this.\n\nInstead of trusting a single company or server to say “this proof is correct,” Soundness allows verification to happen in a decentralized way. This improves security, transparency, and trust across the ecosystem.\n\nWhy does this matter to you? Because it means the apps you use can scale safely, remain trustless, and stay verifiable by anyone. Soundness makes advanced cryptography usable in real-world Web3 applications."
+        beginnerExplanations[
+          Math.floor(Math.random() * beginnerExplanations.length)
+        ]
       );
     }
 
     if (audience === "Developer") {
       setExplanation(
-        "Soundness Layer provides developers with a decentralized verification and attestation layer for zero-knowledge proofs and cryptographic computations.\n\nVerifying proofs directly on-chain is expensive and inefficient, while off-chain verification often introduces trust assumptions. Soundness solves this by enabling trust-minimized, decentralized verification using off-chain storage and optimized verification pipelines.\n\nFor developers, this means better scalability, lower costs, and stronger security guarantees. Instead of building custom verification systems or relying on centralized services, developers can integrate Soundness as shared infrastructure.\n\nBy abstracting away verification complexity, Soundness allows developers to focus on building applications while still benefiting from strong cryptographic security and decentralization."
+        developerExplanations[
+          Math.floor(Math.random() * developerExplanations.length)
+        ]
       );
     }
 
     if (audience === "Investor") {
       setExplanation(
-        "Soundness Layer is foundational infrastructure for the future of zero-knowledge powered applications.\n\nAs ZK proofs become more important for scalability, privacy, and cross-chain interoperability, verification becomes a major bottleneck. Soundness directly addresses this by reducing verification cost, latency, and trust assumptions.\n\nInfrastructure layers that solve fundamental problems tend to capture long-term value. Soundness benefits from strong network effects: as more applications rely on zero-knowledge proofs, demand for decentralized verification increases.\n\nBy positioning itself as a core verification layer for the ZK ecosystem, Soundness has the potential to become an essential primitive in Web3 infrastructure."
+        investorExplanations[
+          Math.floor(Math.random() * investorExplanations.length)
+        ]
       );
     }
   };
@@ -29,9 +71,13 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-blue-600 text-white px-4">
       
-      <h1 className="text-4xl md:text-5xl font-bold mb-8">
+      <h1 className="text-4xl md:text-5xl font-bold mb-6">
         Soundness Explainer
       </h1>
+
+      <p className="mb-6 text-center max-w-xl text-blue-100">
+        Pick an audience, click generate, and get a clear explanation of Soundness you can copy or share.
+      </p>
 
       <div className="bg-white text-blue-700 rounded-2xl p-8 w-full max-w-3xl shadow-xl">
         
@@ -66,11 +112,11 @@ export default function Home() {
       <footer className="mt-10 text-sm opacity-90">
         Made by{" "}
         <a
-          href="https://x.com/daviddforth"
+          href="https://x.com/David_dforth"
           target="_blank"
           className="underline font-semibold"
         >
-          @daviddforth
+          @David_dforth
         </a>{" "}
         — follow me on X
       </footer>
